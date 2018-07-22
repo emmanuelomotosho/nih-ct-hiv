@@ -249,7 +249,8 @@ if __name__ == '__main__':
         model_cache.sort(key=lambda x: x[1], reverse=True)  # sort by descending F-score
         payload = {
             'vectorizer': vectorizer,
-            'model': model_cache[0][0]
+            'model': model_cache[0][0],
+            'chi2_best': chi2_best
         }
         with open(config['export'], 'wb') as f:
             pickle.dump(payload, f)
